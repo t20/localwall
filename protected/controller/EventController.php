@@ -3,7 +3,9 @@
 class EventController extends DooController {
 
     function index() {
-		echo 'You are visiting '.$_SERVER['REQUEST_URI'];
+        // echo 'You are visiting '.$_SERVER['REQUEST_URI'];
+		$a = Doo::db()->find('Event');
+        echo 'Title::' . $a[0]->title;
 	}
 
 	function events() {
