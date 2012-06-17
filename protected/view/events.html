@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>LocalWallApp</title>
+
+<link rel="stylesheet" type="text/css" href="{{baseurl}}global/css/style.css" />
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<link type="text/css" rel="stylesheet" href="{{baseurl}}global/css/jquery.fancybox.css" />
+
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="{{baseurl}}global/css/jquery.fancybox.css?v=2.0.6" type="text/css" media="screen" />
+<script type="text/javascript" src="{{baseurl}}global/js/jquery.fancybox.pack.js?v=2.0.6"></script>
+
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+
+
+
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay opening speed and opacity
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedIn : 500,
+						opacity : 0.95
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background-color' : '#eee'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : true,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : true,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+</head>
+
+<body id="home-page" onload="MM_preloadImages('{{baseurl}}global/img/facebook_selected.png','{{baseurl}}global/img/twitter_selected.png','{{baseurl}}global/img/mail_selected.png')">
+	<div id="header">
+    </div>
+    <div id="header-box">
+    	<h4>Los Angeles, CA</h4>
+        <h2>90027</h2>
+        <a href="/localwall">Change Zip ?</a>
+    </div>
+    <div id="logo">
+    <a href="#"><img src="{{baseurl}}global/img/logo.png" /></a>
+    </div>
+    <div id="main-content-wrapper">
+    	<div class="main-anchor">
+        	<a class="fancybox" rel="group" href="{{baseurl}}global/img/bbq.jpg">+ ADD EVENT</a>
+        </div>
+        <div class="nav-container">
+        	<table width="100%">
+            	<tr>
+                	<td>
+        				<div class="fastest-trending-button">
+            			fastest trending
+            			</div>
+                    </td>
+                    <td>
+                    	<div class="trendiest-button">
+                        trendiest
+                        </div>
+                    </td>
+                    <td>
+                    	<div class="categories-button">
+                        <a href="#">categories</a>
+                        </div>
+                    </td>
+                    <td width="12px">
+                    	<img src="{{baseurl}}global/img/down-triangle.png" width="12px" />
+                    </td>
+                    <td>
+                    	<div class="main-search">
+                        	<input type="text" value="search" onfocus="if(this.value == 'search') { this.value = ''; }" />
+                        </div>
+                    </td>
+                    <td>
+                    	<input type="submit" value="GO" class="main-search-go" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- if {{events}} -->        
+        <!-- loop events -->
+        <div class="repeatable-content-container">
+        	<div class="repeatable-content-container-wrapper">
+            	<table>
+                	<tr>
+                    	<td width="150px">
+                        <img src="{{baseurl}}global/img/bbq.jpg" width="150px" style="border:#CCC 5px solid;" />
+                        <div class="spacer"></div>
+          <div style="margin-left:-90px;">
+                        	<table style="width:40px; vertical-align:middle;">
+                            	<tr>
+                                	<td>
+                                  <a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('facebook-icon','','{{baseurl}}global/img/facebook_selected.png',1)"><img src="{{baseurl}}global/img/facebook_grey.png" alt="Share on Facebook" name="facebook-icon" width="17" height="17" border="0" id="facebook-icon" /></a></td>
+                                    <td>
+                                  <a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('twitter-icon','','{{baseurl}}global/img/twitter_selected.png',1)"><img src="{{baseurl}}global/img/twitter_grey.png" alt="Share via Twitter" name="twitter-icon" width="16" height="17" border="0" id="twitter-icon" /></a></td>
+                                    <td>
+                                    <a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('mail-icon','','{{baseurl}}global/img/mail_selected.png',1)"><img src="{{baseurl}}global/img/mail_grey.png" alt="Share via Email" name="mail-icon" width="17" height="14" border="0" id="mail-icon" /></a></td>
+                                </tr>
+                            </table>
+                        </div>
+                </td>
+                        <td style="padding-left:20px;">
+                        	<table><tr><td>
+                        	<div>
+                            	<h3>{{events' v.@created}}</h3>
+                                <h2>{{events' v.@title}}</h2>
+                            </div>
+                            <div class="repeatable-content-container-wrapper-text">
+                            	{{events' v.@desc}}
+                            </div></td>
+                            <td>
+                            	<div><a href="#"><img src="{{baseurl}}global/img/arrow.png" /></a></div>
+                                <div class="like-count">{{events' v.@vote_count}}</div>
+                            </td></tr></table>
+                            <table style="margin-left:0;"><tr><td><div class="submitted-by">
+                            	Submitted by <a href="#">Debbie Jones</a>
+                            </div></td>
+                            <td>
+                            	<div class="submitted-by-more" style="text-align:right; padding-top:10px;">
+                                <a href="/localwall/event/{{events' v.@id }}">More <img src="{{baseurl}}global/img/down-triangle-white.png" width="12px;" /></a>
+                                </div>
+                            </td></tr></table>
+                        </td>
+                    </tr>
+                    
+                </table>
+            </div>
+        </div>
+        <!-- endloop -->
+        <!-- else -->
+        <p>No events currently? <a href="/add" class="add">Why not create one?</a></p>
+        <!-- endif -->
+    </div>
+    
+
+
+</body>
+</html>

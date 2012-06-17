@@ -10,7 +10,9 @@ class EventController extends DooController {
 	}
 
 	function events() {
-		echo 'You are visiting '.$_SERVER['REQUEST_URI'];
+        $data = Doo::conf()->view_data;
+        $data['events'] = Doo::db()->find('Event');
+        $this->view()->render('events', $data);
 	}
 
 	function event() {
