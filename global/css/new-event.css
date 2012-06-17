@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color:#afb0b4;
+}
+
+#container {
+	width:700px;
+	height:500px;
+	border:#000 1px solid;
+	margin:0px auto;
+}
+
+.column-one {
+	width:250px;
+	float:left;
+}
+
+.column-two {
+	width:450px;
+	float:left;
+}
+
+/*Column one classes */
+
+.placeholder-pic {
+	margin:30px 0px 0px 30px;
+	width:190px;
+}
+
+.your-called {
+	margin-left:30px;
+	margin-top:10px;
+	font-size:16px;
+	font-weight:bold;
+	color:#FFF;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.name-input {
+	margin:5px 0px 0px 30px;
+}

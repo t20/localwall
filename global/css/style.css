@@ -1,0 +1,368 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	margin:0;
+	padding:0;
+}
+
+#home-page {
+	background-color:#6CACD3;
+}
+
+#header {
+	width:100%;
+	height:50px;
+	border:#000 1px solid;
+	background-color:#000;
+}
+
+#logo {
+	width:90%;
+	margin:0px auto;
+	margin-top:-40px;
+}
+
+/*Splash classes */
+
+#zipcode-box {
+	width:300px;
+	height:120px;
+	margin:0px auto;
+	background-color:#D6BF28;
+	border:#CCC 7px solid;
+	padding:10px;
+}
+
+#zipcode-box h2 {
+	font-size:24px;
+	font-weight:bold;
+	color:#FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	margin-top:2px;
+}
+
+#zipcode-box .input {
+width:250px;
+padding:10px;
+border-radius:5px;
+font-family:Arial, Helvetica, sans-serif;
+font-size:18px;
+margin-top:-10px;
+text-align:left;
+color:#999;
+}
+
+.zipcode-submit {
+width:90px;
+display:block;
+border:none;
+border-radius:5px;
+height: 30px;
+background-color:#000;
+font-family:Arial, Helvetica, sans-serif;
+font-size:14px;
+font-weight:bold;
+color:#FFF;
+}
+
+.zipcode-submit:hover {
+width:90px;
+display:block;
+border:none;
+border-radius:5px;
+height: 30px;
+background-color:#FFF;
+font-family:Arial, Helvetica, sans-serif;
+font-size:14px;
+font-weight:bold;
+color:#000;
+cursor:pointer;
+}
+
+#zip-wrapper {
+	width:300px;
+	margin:0px auto;
+}
+
+.spacer {
+	height:5px;
+}
+
+#home-tagline {
+	font-size:42px;
+	color:#FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	margin:0px auto;
+	margin-bottom:40px;
+	width:90%;
+	text-align:center;
+}
+
+/*End splash classes */
+
+/*Main content classes */
+
+#header-box {
+	float:right;
+	margin-top:-55px;
+	margin-right:25%;
+	color:#FFF;
+	text-align:right;
+}
+
+#header-box h4 {
+	color:#FFF;
+	padding:0px;
+	font-size:18px;
+	height:10px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#header-box h2 {
+	color:#FFF;
+	padding:0px;
+	font-size:48px;
+	height:10px;
+	font-family:Arial, Helvetica, sans-serif;
+	margin-top:-3px;
+}
+
+#header-box a {
+	color:#FFF;
+	padding:0px;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	text-decoration:none;
+}
+
+#header-box a:hover {
+	color:#FFF;
+	padding:0px;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	text-decoration:underline;
+}
+
+#main-content-wrapper {
+	width:50%;
+	height:600px;
+	margin:0px auto;
+	margin-top:-30px;
+	padding:10px;
+}
+
+.main-anchor a{
+	font-size:24px;
+	color:#FFF;
+	text-decoration:none;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.main-anchor a:hover{
+	font-size:24px;
+	color:#FFF;
+	text-decoration:underline;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.nav-container {
+	width:100%;
+	margin-top:10px;
+}
+
+.fastest-trending-button {
+	background-color:#d12027;
+	padding:5px;
+	width:140px;
+	border-radius:2px;
+	color:#FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:18px;
+	font-weight:bold;
+	text-align:center;
+}
+
+.trendiest-button {
+	background-color:#20222e;
+	padding:5px;
+	width:100px;
+	border-radius:2px;
+	color:#FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:18px;
+	font-weight:bold;
+	text-align:center;
+	margin-left:10px;
+}
+
+.fastest-trending-button:hover {
+	background-color:#CCC;
+	padding:5px;
+	width:140px;
+	border-radius:2px;
+	color:#000;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:18px;
+	font-weight:bold;
+	text-align:center;
+	cursor:pointer;
+}
+
+.trendiest-button:hover {
+	background-color:#333;
+	padding:5px;
+	width:100px;
+	border-radius:2px;
+	color:#FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:18px;
+	font-weight:bold;
+	text-align:center;
+	margin-left:10px;
+	cursor:pointer;
+}
+
+.categories-button {
+	font-size:18px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#20222e;
+	margin-left:10px;
+}
+
+.categories-button a{
+	font-size:18px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#20222e;
+	margin-left:10px;
+	text-decoration:none;
+}
+
+.main-search {
+	margin-left:100px;
+}
+
+.main-search input {
+	font-size:18px;
+	color:#CCC;
+	padding:2px;
+	font-family:Arial, Helvetica, sans-serif;
+	width:95%
+}
+
+.main-search-go {
+	font-size:16px;
+	color:#CCC;
+	padding:2px;
+	font-family:Arial, Helvetica, sans-serif;
+	height:29px;
+	width:60px;
+	color:#FFF;
+	font-weight:bold;
+	background-color:#20222e;
+	border:none;
+	border-radius:4px;
+}
+
+.main-search-go:hover {
+	font-size:16px;
+	color:#000;
+	padding:2px;
+	font-family:Arial, Helvetica, sans-serif;
+	height:29px;
+	width:60px;
+	font-weight:bold;
+	background-color:#CCC;
+	border:none;
+	border-radius:4px;
+	cursor:pointer;
+}
+
+.repeatable-content-container {
+	width:97%;
+	margin:0px auto;
+	margin-top:10px;
+	background-color:#d6bf28;
+	padding:10px;
+	border-radius:3px;
+}
+
+.repeatable-content-container-wrapper {
+	width:100%;
+	margin:0px auto;
+	margin-top:10px;
+}
+
+.repeatable-content-container-wrapper table {
+	width:97%;
+	margin:0px auto;
+}
+
+.repeatable-content-container-wrapper td {
+	vertical-align:top;
+}
+
+.repeatable-content-container-wrapper h3 {
+	font-size:20px;
+	color:#FFF;
+	margin-top:-5px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.repeatable-content-container-wrapper h2 {
+	font-size:25px;
+	color:#FFF;
+	margin-top:-10px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.repeatable-content-container-wrapper-text {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#000;
+	margin-top:-15px;
+	width:80%;
+}
+
+.like-count {
+	font-size:18px;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#FFF;
+	text-align:center;
+}
+
+.submitted-by {
+	color:#FFF;
+	font-size:16px;
+	font-family:Arial, Helvetica, sans-serif;
+	padding-left:10px;
+	padding-top:10px;
+}
+
+.submitted-by a {
+	color:#900;
+	font-size:16px;
+	font-family:Arial, Helvetica, sans-serif;
+	text-decoration:none;
+}
+
+.submitted-by a:hover {
+	color:#900;
+	font-size:16px;
+	font-family:Arial, Helvetica, sans-serif;
+	text-decoration:underline;
+}
+
+.submitted-by-more a {
+	color:#FFF;
+	font-size:16px;
+	font-family:Arial, Helvetica, sans-serif;
+	text-decoration:none;
+}
+
+.submitted-by table {
+	width:70%;
+}
