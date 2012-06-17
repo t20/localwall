@@ -17,9 +17,15 @@ date_default_timezone_set('Asia/Kuala_Lumpur');
 $config['SITE_PATH'] = realpath('..').'/localwall/';
 //$config['PROTECTED_FOLDER'] = 'protected/';
 $config['BASE_PATH'] = realpath('..').'/dooframework/';
+$config['SUBFOLDER'] = '/localwall/';
 
 //for production mode use 'prod'
 $config['APP_MODE'] = 'dev';
+
+$config['view_data'] = array(
+    'baseurl'   => $config['SUBFOLDER'],
+    'awesome'   => true
+);
 
 //----------------- optional, if not defined, default settings are optimized for production mode ----------------
 //if your root directory is /var/www/ and you place this in a subfolder eg. 'app', define SUBFOLDER = '/app/'
