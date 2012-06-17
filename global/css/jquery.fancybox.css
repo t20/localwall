@@ -71,10 +71,6 @@
 	max-height: 100%;
 }
 
-#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-	background-image: url('img/fancybox_sprite.png');
-}
-
 #fancybox-loading {
 	position: fixed;
 	top: 50%;
