@@ -17,7 +17,7 @@ Doo::conf()->set($config);
 include $config['BASE_PATH'].'diagnostic/debug.php';
 
 # database usage
-Doo::useDbReplicate();	#for db replication master-slave usage
+// Doo::useDbReplicate();   #for db replication master-slave usage
 Doo::db()->setMap($dbmap);
 Doo::db()->setDb($dbconfig, $config['APP_MODE']);
 //Doo::db()->sql_tracking = true;	#for debugging/profiling purpose
