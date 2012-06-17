@@ -2,6 +2,10 @@
 
 class EventController extends DooController {
 
+    function index() {
+		echo 'You are visiting '.$_SERVER['REQUEST_URI'];
+	}
+
 	function events() {
 		echo 'You are visiting '.$_SERVER['REQUEST_URI'];
 	}
@@ -18,7 +22,7 @@ class EventController extends DooController {
 		echo 'You are visiting '.$_SERVER['REQUEST_URI'];
 	}
 
-	function new() {
+	function new_event() {
 		echo 'You are visiting '.$_SERVER['REQUEST_URI'];
 	}
 
