@@ -5,18 +5,18 @@ class Event extends DooModel{
 
     public $id;
     public $title;
-    // public $image;
-    // public $desc;
-    // public $zip;
-    // public $vote_count;
-    // public $category_id;
-    // public $created;
-    // public $modified;
+    public $image;
+    public $desc;
+    public $zip;
+    public $vote_count;
+    public $category_id;
+    public $user_name;
+    public $created;
+    public $modified;
 
     public $_table = 'events';
     public $_primarykey = 'id';
-    // public $_fields = array('id','title', 'image', 'desc', 'zip', 'vote_count', 'category_id', 'created', 'modified');
-    public $_fields = array('id', 'title');
+    public $_fields = array('id','title', 'image', 'desc', 'zip', 'vote_count', 'category_id', 'user_name', 'created', 'modified');
 
 
     public function  __construct() {
