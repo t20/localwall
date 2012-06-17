@@ -35,4 +35,8 @@ $dbmap['Ingredient']['has_many']['Food'] = array('foreign_key'=>'ingredient_id',
 /* $dbconfig['dev'] = array('localhost', 'database', 'root', '1234', 'mysql', true);
  * $dbconfig['prod'] = array('localhost', 'database', 'root', '1234', 'mysql', true);
  */
+
+
+$dbconfig['dev'] = array('localhost', 'localwall', 'root', '', 'mysql', true);
+
 ?>
