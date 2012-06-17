@@ -12,6 +12,10 @@ class MainController extends DooController{
 		Doo::loadCore('app/DooSiteMagic');
 		DooSiteMagic::displayHome();
     }
+    
+    function hello() {
+		echo 'You are visiting '.$_SERVER['REQUEST_URI'];
+	}
 	
 	public function allurl(){	
 		Doo::loadCore('app/DooSiteMagic');
