@@ -27,6 +27,8 @@ $config['view_data'] = array(
     'awesome'   => true
 );
 
+$config['session_name'] = 'localwall';
+
 //----------------- optional, if not defined, default settings are optimized for production mode ----------------
 //if your root directory is /var/www/ and you place this in a subfolder eg. 'app', define SUBFOLDER = '/app/'
 

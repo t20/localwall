@@ -20,14 +20,13 @@
     <div id="zipcode-box">
     	<center><div id="zip-wrapper">
         	<h2 style="text-align:left; margin-left:15px;">Let's Begin</h2>
-        	<form action="events" method="POST" accept-charset="utf-8">
+        	<form action="next" method="POST" accept-charset="utf-8">
                <div>
-                   <input type="text" value="YOUR AWESOME ZIP" maxlength="5" class="input" onfocus="if(this.value == 'YOUR AWESOME ZIP') { this.value = ''; }" style="border:none;" />
+                   <input type="text" value="YOUR AWESOME ZIP" maxlength="5" class="input" onfocus="if(this.value == 'YOUR AWESOME ZIP') { this.value = ''; }" style="border:none;" name="zipcode" />
                </div>
-
+                <div class="spacer"></div>
+                <div style="width:90px; padding-left:180px; text-align:left;"><input type="submit" value="SEARCH" class="zipcode-submit" /></div>
         	</form>
-            <div class="spacer"></div>
-            <div style="width:90px; padding-left:180px; text-align:left;"><input type="submit" value="SEARCH" class="zipcode-submit" /></div>
         </div></center>
     </div>
     

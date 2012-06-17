@@ -5,6 +5,7 @@
 <title>LocalWallApp</title>
 
 <link rel="stylesheet" type="text/css" href="{{baseurl}}global/css/style.css" />
+<link rel="stylesheet" type="text/css" href="{{baseurl}}global/css/new-event.css" />
 
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
@@ -222,8 +223,8 @@ function MM_swapImage() { //v3.0
 	<div id="header">
     </div>
     <div id="header-box">
-    	<h4>Los Angeles, CA</h4>
-        <h2>90027</h2>
+    	<h4>San Diego, CA</h4>
+        <h2>{{zipcode}}</h2>
         <a href="/localwall">Change Zip ?</a>
     </div>
     <div id="logo">
@@ -231,7 +232,7 @@ function MM_swapImage() { //v3.0
     </div>
     <div id="main-content-wrapper">
     	<div class="main-anchor">
-        	<a class="fancybox" rel="group" href="{{baseurl}}global/img/bbq.jpg">+ ADD EVENT</a>
+        	<a class="fancybox" rel="group" href="#new_event">+ ADD EVENT</a>
         </div>
         <div class="nav-container">
         	<table width="100%">
@@ -298,10 +299,10 @@ function MM_swapImage() { //v3.0
                             </div></td>
                             <td>
                             	<div><a href="#"><img src="{{baseurl}}global/img/arrow.png" /></a></div>
-                                <div class="like-count">{{events' v.@vote_count}}</div>
+                                <div class="like-count">+{{events' v.@vote_count}}</div>
                             </td></tr></table>
                             <table style="margin-left:0;"><tr><td><div class="submitted-by">
-                            	Submitted by <a href="#">Debbie Jones</a>
+                            	Submitted by <a href="#">{{events' v.@user_name}}</a>
                             </div></td>
                             <td>
                             	<div class="submitted-by-more" style="text-align:right; padding-top:10px;">
@@ -316,11 +317,62 @@ function MM_swapImage() { //v3.0
         </div>
         <!-- endloop -->
         <!-- else -->
-        <p>No events currently? <a href="/add" class="add">Why not create one?</a></p>
+        <p>No events currently. <a href="/add" class="add">Why not create one?</a></p>
         <!-- endif -->
     </div>
-    
 
+<div id="new_event" style="display:none;background-color:#999;">
+    <div id="container">
+    	<div class="column-one">
+        	<div class="placeholder-pic">
+            	<a href="#"><img src="{{baseurl}}global/img/image_placeholder.png" width="180px" /></a>
+            </div>
+            <div class="your-called">
+            	You're Called?
+            </div>
+            <div class="name-input">
+            	<input type="text" style="width:175px;" />
+            </div>
+            <div class="your-called" style="font-size:14px;">
+            	OR
+            </div>
+            <div style="margin-top:10px; margin-left:30px;">
+            	<a href="#"><img src="{{baseurl}}global/img/facebook_connect.png" width="100px" /></a>
+            </div>
+        </div>
+        <div class="column-two">
+        	<form style="margin-top:30px;">
+            	<div class="form-titles">Event Title</div>
+            	<input type="text" style="width:400px;" />
+                <div class="form-titles" style="margin-top:5px;">Address</div>
+            	<input type="text" style="width:400px;" />
+                <table class="form-titles">
+                	<tr>
+                    	<td>City</td>
+                        <td>Zip</td>
+                        <td>Event Phone</td>
+                    </tr>
+                    <tr>
+                    	<td><input type="text" style="width:150px;" /></td>
+                        <td><input type="text" style="width:100px;" /></td>
+                        <td><input type="text" style="width:131px;" /></td>
+                    </tr>
+                </table>
+                <div class="form-titles">Category</div>
+                <input type="text" style="width:400px;" />
+                <div class="form-titles" style="margin-top:10px;">Tell Us About It</div>
+                <textarea rows="5" cols="45" style="width:400px;"></textarea>
+                <div style="font-size:14px; color:#FFF; font-family:Arial, Helvetica, sans-serif;">
+                	140 Characters Left
+                </div>
+                <div class="form-submit" style="margin-left:275px;">
+                <input type="submit" value="Cancel" style="text-align:right;" />
+                <input type="submit" value="Submit" style="text-align:right;" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
